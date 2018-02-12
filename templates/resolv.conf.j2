@@ -1,0 +1,10 @@
+##
+# /etc/resolv.conf
+# {{ ansible_managed }}
+
+{% if 'dns' in group_names %}
+nameserver 127.0.0.1
+{% else %}
+## use systemd-resolved.service
+nameserver 127.0.0.53
+{% endif %}
