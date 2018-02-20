@@ -18,11 +18,13 @@
     - package
   package:
     name: libnss-resolve
+  when: "'dns' not in group_names"
 
 - name: systemd-resolved | nsswitch.conf
-  copy:
-    src: nsswitch.conf
-    dest: /etc/
+  replace:
+    path: /etc/nsswitch.conf
+    regexp: 'resolve (\[.*\])?'
+    replace: ""
   when: "'dns' in group_names"
 
 - name: systemd-resolved | config
@@ -34,7 +36,7 @@
     dest: /etc/systemd/resolved.conf
   notify: restart resolved
 
-- name: systemd-resolved | enable
+- name: systemd-resolved | set /etc/resolv.conf
   tags:
     - resolver
   template:
