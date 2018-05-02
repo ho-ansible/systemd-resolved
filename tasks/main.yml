@@ -5,12 +5,11 @@
     - resolver
     - package
   package:
-    name: "{{ item }}"
     state: absent
     purge: yes
-  with_items:
-    - resolvconf
-    - openresolv
+    name: 
+      - resolvconf
+      - openresolv
 
 - name: systemd-resolved | glibc NSS module
   tags:
