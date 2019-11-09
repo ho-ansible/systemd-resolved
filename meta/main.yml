@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Sean Ho
+  description: Template ansible role
+  company: Anchorlytics Consulting
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+   - name: Debian
+     versions:
+     - stable
+     - 10
+
+  galaxy_tags:
+    - template
+
+dependencies: []
