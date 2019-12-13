@@ -10,7 +10,7 @@ galaxy_info:
    - name: Debian
      versions:
      - stable
-     - 9
+     - 10
 
   galaxy_tags:
     - systemd

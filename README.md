@@ -12,14 +12,6 @@ Only tested on Debian stable, for now.
 ## Dependencies
 None.
 
-## Example Playbook
-
-```
-- hosts: all
-  roles:
-    - { role: ho-ansible.systemd-resolved }
-```
-
 ## License
 MIT
 

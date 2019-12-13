@@ -1,12 +1,7 @@
-## /etc/systemd/resolved.conf
-# systemd-resolved runs a local DNS resolver
-# in /etc/resolv.conf: nameserver 127.0.0.53
 # {{ ansible_managed }}
-
 [Resolve]
 DNS={{ preferred_dns }}
 FallbackDNS={{ fallback_dns }}
 Domains={{ default_domain }}
 LLMNR=no
-#MulticastDNS=no
 DNSSEC=no
