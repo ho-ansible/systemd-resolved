@@ -35,6 +35,21 @@
     dest: /etc/systemd/resolved.conf
   notify: restart resolved
 
+- name: systemd-resolved | emulate resolvconf
+  tags:
+    - resolvconf
+  file:
+    src: /usr/bin/resolvectl
+    dest: /sbin/resolvconf
+    state: link
+
+- name: systemd-resolved | dhclient hook
+  tags:
+    - hook
+  copy:
+    src: resolvconf
+    dest: /etc/dhcp/dhclient-enter-hooks.d/
+
 - name: systemd-resolved | set /etc/resolv.conf
   tags:
     - resolver
