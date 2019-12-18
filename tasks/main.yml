@@ -55,13 +55,6 @@
     dest: /etc/dhcp/dhclient-enter-hooks.d/
   when: ctl_stat.stat.exists is defined and ctl_stat.stat.exists
 
-- name: systemd-resolved | set /etc/resolv.conf
-  tags:
-    - resolver
-  template:
-    src: resolv.conf.j2
-    dest: /etc/resolv.conf
-
 - name: systemd-resolved | service
   tags:
     - resolver
@@ -70,3 +63,4 @@
     name: systemd-resolved
     state: started
     enabled: yes
+  notify: use resolved

@@ -9,6 +9,10 @@ Only tested on Debian stable, for now.
 + `fallback_dns`: IP address of DNS server to use *only* if no other servers (e.g., per-interface) are configured
 + `search_domains` (default: none): list of domains to append to bare hostnames
 
+## Handlers
++ `use resolved`: sets `/etc/resolv.conf` to point only to local systemd-resolved at 127.0.0.53
++ `restart resolved`: restart systemd-resolved.service
+
 ## Dependencies
 None.
 
