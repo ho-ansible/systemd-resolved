@@ -2,6 +2,8 @@
 [Resolve]
 DNS={{ preferred_dns }}
 FallbackDNS={{ fallback_dns }}
-Domains={{ default_domain }}
+{% for domain in search_domains %}
+Domains={{ domain }}
+{% endfor %}
 LLMNR=no
 DNSSEC=no

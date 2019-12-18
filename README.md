@@ -7,7 +7,7 @@ Only tested on Debian stable, for now.
 ## Role Variables
 + `preferred_dns`: IP address of primary DNS server
 + `fallback_dns`: IP address of DNS server to use *only* if no other servers (e.g., per-interface) are configured
-+ `default_domain` (default: none): domain to append to bare hostnames
++ `search_domains` (default: none): list of domains to append to bare hostnames
 
 ## Dependencies
 None.

@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
-{% if default_domain | d() %}
-search {{ default_domain }}
-{% endif %}
+{% for domain in search_domains %}
+search {{ domain }}
+{% endfor %}
 
 nameserver 127.0.0.53
