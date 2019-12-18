@@ -33,6 +33,11 @@
     dest: /etc/systemd/resolved.conf
   notify: restart resolved
 
+- name: systemd-resolved | check resolvectl
+  stat:
+    path: /usr/bin/resolvectl
+  register: ctl_stat
+
 - name: systemd-resolved | emulate resolvconf
   tags:
     - resolvconf
@@ -40,6 +45,7 @@
     src: /usr/bin/resolvectl
     dest: /sbin/resolvconf
     state: link
+  when: ctl_stat.stat.exists is defined and ctl_stat.stat.exists
 
 - name: systemd-resolved | dhclient hook
   tags:
@@ -47,6 +53,7 @@
   copy:
     src: resolvconf
     dest: /etc/dhcp/dhclient-enter-hooks.d/
+  when: ctl_stat.stat.exists is defined and ctl_stat.stat.exists
 
 - name: systemd-resolved | set /etc/resolv.conf
   tags:
