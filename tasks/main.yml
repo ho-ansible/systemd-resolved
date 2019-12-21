@@ -18,12 +18,6 @@
   package:
     name: libnss-resolve
 
-- name: systemd-resolved | nsswitch.conf
-  replace:
-    path: /etc/nsswitch.conf
-    regexp: 'resolve (\[.*\])?'
-    replace: ""
-
 - name: systemd-resolved | config
   tags:
     - resolver
