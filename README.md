@@ -7,6 +7,9 @@ Only tested on Debian stable, for now.
 ## Role Variables
 + `variable`: description
 
+## Playbooks
++ `main.yml`: apply role
+
 ## Dependencies
 None.
 
