@@ -9,7 +9,7 @@ Only tested on Debian stable, for now.
 
 ## Playbooks
 + `main.yml`: apply role
-+ `uninstall.yml`: remove. Run before removing config from inventory.
++ `uninstall.yml`: remove. Use `-l` option to specify desired hosts.
 
 ## Dependencies
 None.
