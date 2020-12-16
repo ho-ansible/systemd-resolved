@@ -1,6 +1,6 @@
 #! /usr/bin/env ansible-playbook
 # Uninstall role
-# Use '-l' option to specify hosts from which to uninstall
+# Run prior to removing host from inventory groups, so hostvars are accessible
 ---
 - name: template | uninstall
   hosts: all
