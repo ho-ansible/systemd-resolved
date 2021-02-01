@@ -7,14 +7,14 @@ galaxy_info:
   min_ansible_version: 1.2
 
   platforms:
-   - name: Debian
-     versions:
-     - stable
-     - 10
+  - name: Debian
+    versions:
+    - stable
+    - 10
 
   galaxy_tags:
-    - systemd
-    - DNS
-    - resolver
+  - systemd
+  - DNS
+  - resolver
 
 dependencies: []

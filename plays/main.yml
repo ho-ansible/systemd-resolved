@@ -1,0 +1,10 @@
+#! /usr/bin/env ansible-playbook
+# Configure template role
+# Replace 'all' with your own inventory group
+---
+- name: template | template role
+  hosts: all
+  roles:
+  - role: template
+    tags:
+    - template

@@ -1,0 +1,10 @@
+#! /usr/bin/env ansible-playbook
+# Uninstall role
+# Run prior to removing host from inventory groups, so hostvars are accessible
+---
+- name: template | uninstall
+  hosts: all
+  tasks:
+  - include_role:
+      name: template
+      tasks_from: uninstall.yml

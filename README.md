@@ -13,11 +13,15 @@ Only tested on Debian stable, for now.
 + `use resolved`: sets `/etc/resolv.conf` to point only to local systemd-resolved at 127.0.0.53
 + `restart resolved`: restart systemd-resolved.service
 
+## Playbooks
++ `main.yml`: apply role
++ `uninstall.yml`: remove. Run prior to removing host from inventory group.
+
 ## Dependencies
 None.
 
 ## License
-MIT
++ Ansible role licensed [MIT](LICENSE)
 
 ## Author Information
 + Ansible role by [Sean Ho](https://github.com/ho-ansible/)
