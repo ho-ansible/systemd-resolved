@@ -1,10 +1,11 @@
 #! /usr/bin/env ansible-playbook
-# Configure template role
+# Configure systemd DNS resolver
 # Replace 'all' with your own inventory group
 ---
-- name: template | template role
+- name: systemd-resolved | apply role
   hosts: all
   roles:
-  - role: template
+  - role: systemd-resolved
     tags:
-    - template
+    - resolved
+    - dns
