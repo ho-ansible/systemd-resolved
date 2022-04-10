@@ -53,10 +53,11 @@
   tags:
     - resolver
     - service
-  service:
+  systemd:
     name: systemd-resolved
-    state: started
+    masked: no
     enabled: yes
+    state: started
   notify: use resolved
 
 - name: systemd-resolved | enable in /etc/resolv.conf
