@@ -11,12 +11,14 @@
       - resolvconf
       - openresolv
 
-- name: systemd-resolved | glibc NSS module
+- name: systemd-resolved | install packages
   tags:
     - resolver
     - package
   package:
-    name: libnss-resolve
+    name: 
+    - libnss-resolve
+    - systemd-resolved
 
 - name: systemd-resolved | config
   tags:
