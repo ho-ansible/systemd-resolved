@@ -11,14 +11,22 @@
       - resolvconf
       - openresolv
 
-- name: systemd-resolved | install packages
+- name: systemd-resolved | install libnss-resolve
   tags:
     - resolver
     - package
   package:
-    name: 
-    - libnss-resolve
-    - systemd-resolved
+    name: libnss-resolve
+
+- name: systemd-resolved | install systemd-resolved
+  tags:
+    - resolver
+    - package
+  package:
+    name: systemd-resolved
+  when: 
+  - ansible_os_family == 'Debian'
+  - ansible_lsb.major_release | int >= 12
 
 - name: systemd-resolved | config
   tags:
